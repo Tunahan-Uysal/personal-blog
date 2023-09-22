@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-
+//ur doing animated gradient button, dont forget
 </script>
 
 
