@@ -5,16 +5,10 @@
         style="background-image: url(https://images.unsplash.com/photo-1681506540686-126384e54751?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80);">
       </div>
       <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black via-black via-50 basis-1/4">
-        {{ post.description }}
+        {{ post.shortDescription }}
       </p>
       <div class="basis-1/4 flex flex-row-reverse">
         <UButton />
-        <ContentDoc v-slot="{ doc }" path="/blog">
-          <article>
-            <h1>{{ doc.title }}</h1>
-            <ContentRenderer :value="doc" />
-          </article>
-        </ContentDoc>
       </div>
     </div>
   </div>
@@ -42,8 +36,25 @@ export default {
 
   const posts = await queryContent('blog')
   .sort({date: -1})
-  .find()
-    return { posts }
+  .find();
+
+    const shortDescription = ref("");
+    const seperateDescription = (str: string) => {
+      shortDescription.value = str.substring(0, 97) + "...";
+    }
+    onMounted(() => {
+      posts.forEach((post) => {
+
+        //todo: fix it not being assigned the shorter string....
+
+        seperateDescription(post.description);
+        console.log(post.shortDescription);
+      })
+    });
+    return {
+      posts,
+      seperateDescription 
+    };
  }
 
 }
