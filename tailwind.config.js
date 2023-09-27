@@ -14,7 +14,7 @@ export default {
         'gradient-y':'gradient-y 15s ease infinite',
         'gradient-xy':'gradient-xy 15s ease infinite',
     },
-    'keyframes': {
+      'keyframes': {
         'gradient-y': {
             '0%, 100%': {
                 'background-size':'400% 400%',
@@ -45,11 +45,11 @@ export default {
                 'background-position': 'right center'
             }
         },
-      fontFamily: {
-        'display': ['"Lexend Zetta"','"Lexend Mega"','"Roboto Mono"', 'ui-monospace']
+        fontFamily: {
+          'display': ['"Lexend Zetta"','"Lexend Mega"','"Roboto Mono"', 'ui-monospace']
+        },
       },
     },
-  },
-  plugins: [],
+    plugins: [],
+  }
 }
-
