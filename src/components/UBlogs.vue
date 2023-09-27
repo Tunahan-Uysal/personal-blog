@@ -36,10 +36,12 @@ export default {
     return { posts }
   },
   */
+
+  //todo: figure out what you did right
  async setup() {
 
   const posts = await queryContent('blog')
-  .sort({date: 1})
+  .sort({date: -1})
   .find()
     return { posts }
  }
