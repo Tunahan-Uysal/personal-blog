@@ -3,9 +3,6 @@
   <UHeader/>
   <main class=" flex flex-col mt-8">
     <UBlogs/>
-    <UBlogs/>
-    <UBlogs/>
-    <UBlogs/>
   </main>
 </div>
   
