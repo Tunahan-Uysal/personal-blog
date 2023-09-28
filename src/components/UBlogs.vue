@@ -10,7 +10,9 @@
         {{ post.shortDescription }}
       </p>
       <div class="basis-1/4 flex flex-row-reverse">
-        <UButton />
+        <NuxtLink :to="'../pages/' + post.date + '/' +post.title">
+          <UButton />
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -20,6 +22,7 @@
 
 import UButton from '~/components/UButton.vue'
 import { onMounted } from 'vue';
+import { useRoute } from 'vue-router'
 
 export default {
   /*

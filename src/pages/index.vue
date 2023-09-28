@@ -1,11 +1,10 @@
 <template>
-<div class="bg-gradient-to-b from-slate-200 to-50%">
-  <UHeader/>
-  <main class=" flex flex-col mt-8">
-    <UBlogs/>
-  </main>
-</div>
-  
+  <div class="bg-gradient-to-b from-slate-200 to-50%">
+    <UHeader/>
+    <main class=" flex flex-col mt-8">
+      <UBlogs/>
+    </main>
+  </div>
 </template>
 
 <script lang="ts" setup>
