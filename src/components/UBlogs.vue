@@ -10,7 +10,7 @@
         {{ post.shortDescription }}
       </p>
       <div class="basis-1/4 flex flex-row-reverse">
-        <NuxtLink :to="'../pages/' + post.date + '/' +post.title">
+        <NuxtLink :to="'/2023-09-27/Cathars'">
           <UButton />
         </NuxtLink>
       </div>

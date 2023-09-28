@@ -1,28 +1,29 @@
 <template>
   <div class="bg-gradient-to-b from-slate-200 to-50%">
     <UHeader/>
-    <nuxt-content :document="markdownDocs" />
+    <ContentDoc :path="contentPath"/>
+    <span>{{ $route.params.group }} and {{ $route.params.id }}</span>
   </div>
 </template>
 
 <script lang="ts">
-
 import UHeader from '../../components/UHeader.vue'
 import { useRoute } from 'vue-router'
-const route = useRoute();
-  export default {
 
-
-    async asyncData({$content, params}) {
-    const markdownDocs = await $content(params.name).fetch()
+export default {
+  components: {
+    UHeader
+  },
+  setup() {
+    const route = useRoute();
+    const contentPath = `src/content/blog/${route.params.name}`;
+    console.log(contentPath);
 
     return {
-      markdownDocs
-    }
+      contentPath
+    };
   }
 }
-
-
 </script>
 
 
