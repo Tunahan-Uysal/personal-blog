@@ -1,10 +1,12 @@
 <template>
   <div class="basis-1/2 h-screen w-6/12 ml-16 flex flex-row justify-center" v-for="post in posts" :key="post.slug">
-    <div class=" w-10/12 h-[512px] rounded-lg flex flex-col">
-      <div class="w-11/12 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom basis-2/4"
-        style="background-image: url(https://images.unsplash.com/photo-1681506540686-126384e54751?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80);">
+    <div class=" w-10/12 rounded-lg flex flex-col">
+      <div class="w-11/12 h-72 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom" :style="{ backgroundImage: 'url(' + post.img + ')'}">
       </div>
-      <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black via-black via-50 basis-1/4">
+      <h2 class="ml-4 font-['Lexend_Mega'] text-xl font-medium p-4">
+        {{ post.title }}
+      </h2>
+      <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b  from-black">
         {{ post.shortDescription }}
       </p>
       <div class="basis-1/4 flex flex-row-reverse">
@@ -17,7 +19,7 @@
 <script lang="ts">
 
 import UButton from '~/components/UButton.vue'
-import useContent from '@nuxt/content';
+import { onMounted } from 'vue';
 
 export default {
   /*
@@ -39,21 +41,13 @@ export default {
   .find();
 
     const shortDescription = ref("");
-    const seperateDescription = (str: string) => {
-      shortDescription.value = str.substring(0, 97) + "...";
-    }
-    onMounted(() => {
-      posts.forEach((post) => {
 
-        //todo: fix it not being assigned the shorter string....
-
-        seperateDescription(post.description);
-        console.log(post.shortDescription);
-      })
-    });
+    posts.forEach((post) => {
+      post.shortDescription = post.description.substring(0, 247) + "...";    
+      console.log(post.description, post.shortDescription);
+    })
     return {
       posts,
-      seperateDescription 
     };
  }
 
@@ -62,13 +56,5 @@ export default {
 
 
 <style>
-.bg-opacity-gradient-to-b {
-  -webkit-mask-image: -webkit-gradient(linear, top, bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
-  mask-image: -webkit-gradient(linear, top, bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)))
-}
 
-.bg-opacity-gradient-to-t {
-  -webkit-mask-image: -webkit-gradient(linear, bottom, top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
-  mask-image: -webkit-gradient(linear, bottom, top, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)))
-}
 </style>

@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./src/components/**/*.{js,vue,ts}",
     "./src/layouts/**/*.vue",
     "./src/pages/**/*.vue",
     "./src/plugins/**/*.{js,ts}",
+    "./src/content/blog*.{vue,md}", 
     "./app.vue",
   ],
   theme: {
@@ -45,9 +47,10 @@ export default {
                 'background-position': 'right center'
             }
         },
-        fontFamily: {
-          'display': ['"Lexend Zetta"','"Lexend Mega"','"Roboto Mono"', 'ui-monospace']
-        },
+      },
+      fontFamily: {
+        'display': ['"Lexend Zetta"','"Lexend Mega"','"Roboto Mono"', 'ui-monospace'],
+        'title': ['"Lexend Mega"', '"Roboto Mono"', 'ui-monospace']
       },
     },
     plugins: [],
