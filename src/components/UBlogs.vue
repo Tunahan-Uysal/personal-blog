@@ -1,28 +1,36 @@
 <template>
-  <div class="basis-1/2 h-screen w-6/12 ml-16 flex flex-row justify-center" v-for="post in posts" :key="post.slug">
-    <div class=" w-10/12 rounded-lg flex flex-col">
-      <div class="w-11/12 h-72 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom" :style="{ backgroundImage: 'url(' + post.img + ')'}">
-      </div>
+  <div
+    class="basis-1/2 h-screen w-6/12 ml-16 flex flex-row justify-center"
+    v-for="post in posts"
+    :key="post.slug"
+  >
+    <div class="w-10/12 rounded-lg flex flex-col">
+      <div
+        class="w-11/12 h-72 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
+        :style="{ backgroundImage: 'url(' + post.img + ')' }"
+      ></div>
       <h2 class="ml-4 font-['Lexend_Mega'] text-xl font-medium p-4">
         {{ post.title }}
       </h2>
-      <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b  from-black">
+      <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black">
         {{ post.shortDescription }}
       </p>
       <div class="basis-1/4 flex flex-row-reverse">
-        <NuxtLink :to="'/2023-09-27/Cathars'">
+        <div @click="printValues(post.date.substring(0,10), post.name)">
+        <NuxtLink :to="'/' + post.date.substring(0,10) + '/' + post.name">
           <UButton />
         </NuxtLink>
+        </div>
+
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-
-import UButton from '~/components/UButton.vue'
-import { onMounted } from 'vue';
-import { useRoute } from 'vue-router'
+import UButton from "~/components/UButton.vue";
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
 
 export default {
   /*
@@ -37,27 +45,26 @@ export default {
   */
 
   //todo: figure out what you did right
- async setup() {
-
-  const posts = await queryContent('blog')
-  .sort({date: -1})
-  .find();
+  async setup() {
+    const posts = await queryContent("blog").sort({ date: -1 }).find();
 
     const shortDescription = ref("");
 
     posts.forEach((post) => {
-      post.shortDescription = post.description.substring(0, 247) + "...";    
+      post.shortDescription = post.description.substring(0, 247) + "...";
       console.log(post.description, post.shortDescription);
-    })
+    });
+
+    function printValues(blogDate:string, blogName:string) {
+      alert(blogDate + ", " + blogName);
+    }
+
     return {
       posts,
+      printValues
     };
- }
-
-}
+  },
+};
 </script>
 
-
-<style>
-
-</style>
+<style></style>

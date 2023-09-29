@@ -1,8 +1,8 @@
 <template>
   <div class="bg-gradient-to-b from-slate-200 to-50%">
     <UHeader/>
-    <ContentDoc :path="contentPath"/>
-    <span>{{ $route.params.group }} and {{ $route.params.id }}</span>
+    <ContentDoc :path="'/blog/' + route.params.title"/>
+    <span>{{ route.params.date }} and {{ route.params.title }}</span>
   </div>
 </template>
 
@@ -16,11 +16,15 @@ export default {
   },
   setup() {
     const route = useRoute();
-    const contentPath = `src/content/blog/${route.params.name}`;
-    console.log(contentPath);
+
+    const currentName = ref("");
+
+    currentName.value = route.params.title.toLowerCase();
+
+    console.log("checkthisout:", route.path);
 
     return {
-      contentPath
+      route
     };
   }
 }
