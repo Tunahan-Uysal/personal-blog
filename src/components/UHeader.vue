@@ -1,8 +1,8 @@
 <template>
   <nav class="h-16 w-full flex flex-row bg-indigo-400" style="">
-    <a
+    <NuxtLink to="/"
       class="font-display font-black mx-auto text-xl text-white ml-4 basis-1/12"
-      >Tunahan Uysal</a
+      >Tunahan Uysal</NuxtLink
     >
     <svg
       xmlns="http://www.w3.org/2000/svg"

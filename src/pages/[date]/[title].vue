@@ -1,8 +1,7 @@
 <template>
   <div class="bg-gradient-to-b from-slate-200 to-50%">
     <UHeader/>
-    <ContentDoc :path="'/blog/' + route.params.title"/>
-    <span>{{ route.params.date }} and {{ route.params.title }}</span>
+    <ContentDoc :path="'blog/'+route.params.title"/>
   </div>
 </template>
 
@@ -18,8 +17,6 @@ export default {
     const route = useRoute();
 
     const currentName = ref("");
-
-    currentName.value = route.params.title.toLowerCase();
 
     console.log("checkthisout:", route.path);
 
