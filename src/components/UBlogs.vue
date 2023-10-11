@@ -5,17 +5,19 @@
     :key="post.slug"
   >
     <div class="w-10/12 rounded-lg flex flex-col">
-      <div
-        class="w-11/12 h-72 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
-        :style="{ backgroundImage: 'url(' + post.img + ')' }"
-      ></div>
+      <NuxtLink :to="'/'+post.date.substring(0,10)+'/'+post.name">
+        <div
+          class="w-10/12 h-64 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
+          :style="{ backgroundImage: 'url(' + post.img + ')' }"
+        ></div>
+      </NuxtLink>
       <h2 class="ml-4 font-['Lexend_Mega'] text-xl font-medium p-4">
         {{ post.title }}
       </h2>
       <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black">
         {{ post.shortDescription }}
       </p>
-      <div class="basis-1/4 flex flex-row-reverse">
+      <div class="basis-1/4 flex flex-row-reverse mb-8">
         <NuxtLink :to="'/'+post.date.substring(0,10)+'/'+post.name">
           <UButton />
         </NuxtLink> 

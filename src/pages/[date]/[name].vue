@@ -60,9 +60,9 @@ ul {
   padding-bottom: 16px;
 }
 h2 {
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: 600;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 </style>
