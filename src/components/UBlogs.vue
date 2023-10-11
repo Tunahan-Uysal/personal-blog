@@ -16,12 +16,9 @@
         {{ post.shortDescription }}
       </p>
       <div class="basis-1/4 flex flex-row-reverse">
-        <div @click="printValues(post.date.substring(0,10), post.name)">
         <NuxtLink :to="'/'+post.date.substring(0,10)+'/'+post.name">
           <UButton />
-        </NuxtLink>
-        </div>
-
+        </NuxtLink> 
       </div>
     </div>
   </div>

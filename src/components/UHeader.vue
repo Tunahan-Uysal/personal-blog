@@ -1,5 +1,5 @@
 <template>
-  <nav class="h-16 w-full flex flex-row bg-indigo-400" style="">
+  <nav class="h-16 w-full flex flex-row bg-indigo-400 sticky top-0" style="">
     <NuxtLink to="/"
       class="font-display font-black mx-auto text-xl text-white ml-4 basis-1/12"
       >Tunahan Uysal</NuxtLink
