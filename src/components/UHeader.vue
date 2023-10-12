@@ -17,13 +17,15 @@
       />
       
     </svg>
-    <USidebar />  
+    <div class="absolute flex flex-row-reverse w-full">
+      <div class="hover:w-0 duration-300 w-64 h-screen bg-black">
+
+      </div>
+    </div>  
   </nav>
 </template>
 
 <script lang="ts" setup>
-
-import USidebar from "~/components/USidebar.vue";
 
 </script>
 
