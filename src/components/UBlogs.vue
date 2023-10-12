@@ -1,6 +1,6 @@
 <template>
   <div
-    class="basis-1/2 h-screen w-6/12 ml-16 flex flex-row justify-center"
+    class="h-screen flex flex-row justify-center"
     v-for="post in posts"
     :key="post.slug"
   >
