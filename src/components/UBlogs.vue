@@ -5,7 +5,7 @@
     :key="post.slug"
   >
     <div class="w-10/12 rounded-lg flex flex-col">
-      <NuxtLink :to="'/'+post.date.substring(0,10)+'/'+post.name">
+      <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
         <div
           class="w-10/12 h-64 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
           :style="{ backgroundImage: 'url(' + post.img + ')' }"
@@ -18,9 +18,9 @@
         {{ post.shortDescription }}
       </p>
       <div class="basis-1/4 flex flex-row-reverse mb-8">
-        <NuxtLink :to="'/'+post.date.substring(0,10)+'/'+post.name">
+        <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
           <UButton />
-        </NuxtLink> 
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -54,13 +54,13 @@ export default {
       console.log(post.description, post.shortDescription);
     });
 
-    function printValues(blogDate:string, blogName:string) {
+    function printValues(blogDate: string, blogName: string) {
       alert(blogDate + ", " + blogName);
     }
 
     return {
       posts,
-      printValues
+      printValues,
     };
   },
 };
