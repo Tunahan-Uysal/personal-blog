@@ -1,6 +1,9 @@
 <template>
   <div class="basis-4/12 border-l my-16">
     <div class="border-l-slae-300 h-screen">
+      <span class="font-title ml-4 underline decoration-double text-2xl">
+        Latest Articles
+      </span>
       <div
         class="rounded-lg bg-slate-50 w-9/12 mx-auto mt-6"
         v-for="post in posts.slice(0, 3)"
@@ -20,7 +23,7 @@
             <section class="text-sm basis-1/2">
               {{ post.title }}
             </section>
-            <section class="basis-1/2 text-xs">
+            <section class="basis-1/2 text-xs mt-2">
               {{ post.author }}
             </section>
           </div>

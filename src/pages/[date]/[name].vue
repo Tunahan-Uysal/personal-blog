@@ -1,9 +1,9 @@
 <template>
-  <div class="h-screen bg-gradient-to-b from-slate-200 to-50%">
+  <div class="h-screen bg-gradient-to-b from-slate-200 to-[50vh]">
     <UHeader />
     <div class="flex">
       <div
-        class="basis-8/12 w-10/12 rounded-md h-3/4 mb-16 pb-4 -py-8 bg-fixed bg-cover bg-center flex justify-center"
+        class="basis-8/12 w-10/12 rounded-md h-3/4 -py-8 bg-fixed bg-cover bg-center flex justify-center"
       >
         <main class="mt-16 w-11/12 font-light font-article">
           <h1 class="font-['Lexend_Mega'] text-center text-2xl font-bold">

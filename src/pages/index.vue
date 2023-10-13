@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-b from-slate-200 to-50%">
+  <div class="bg-gradient-to-b from-slate-200 to-[50vh]">
     <UHeader />
     <main class="flex">
       <div class="grid grid-cols-2 mt-8 basis-8/12">
