@@ -5,12 +5,12 @@
       <div
         class="basis-8/12 w-10/12 rounded-md h-3/4 mb-16 pb-4 -py-8 bg-fixed bg-cover bg-center flex justify-center"
       >
-        <main class="mt-16 w-9/12 shadow-lg rounded-t-lg">
+        <main class="mt-16 w-11/12 font-light font-article">
           <h1 class="font-['Lexend_Mega'] text-center text-2xl font-bold">
             {{ articles.title }}
           </h1>
 
-          <h3 class="px-16 font-serif text-lg mt-6 mb-3">
+          <h3 class="px-16 text-lg mt-6 mb-3">
             {{ articles.description }}
           </h3>
           <div
@@ -18,7 +18,7 @@
             :style="{ backgroundImage: 'url(' + articles.img + ')' }"
           ></div>
           <ContentDoc
-            class="px-16 font-serif text-lg mt-3"
+            class="px-16 text-lg mt-3"
             :path="'blog/' + articles.name"
           />
         </main>
@@ -30,7 +30,6 @@
 
 <script lang="ts">
 import UHeader from "../../components/UHeader.vue";
-import UTrendingBar from "../../components/UTrendingBar.vue";
 import { useRoute } from "vue-router";
 
 export default {

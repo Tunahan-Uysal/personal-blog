@@ -3,6 +3,7 @@ name: history-of-zagreb
 title: "History of Zagreb"
 date: 2023-09-20
 description: "Zagreb, the capital of Croatia, is a city rich in history and culture. It's located in the northern part of the country, along the Sava river, at the southern slopes of the Medvednica mountain. The city is situated near the international border between Croatia and Slovenia, at an elevation of approximately 122 meters (400 feet) above sea level."
+author: "Tunahan Uysal"
 img: https://images.unsplash.com/photo-1628108452408-45fe8a87674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFphZ3JlYnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60
 ---
 

@@ -12,7 +12,6 @@
 
 <script lang="ts" setup>
 import UHeader from "~/components/UHeader.vue";
-import UTrendingBar from "~/components/UTredingBar.vue";
 import UBlogs from "~/components/UBlogs.vue";
 </script>
 

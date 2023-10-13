@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       'Lexend+Zetta': [100, 400, 500, 900],
       'Lexend+Mega': [100, 400, 500, 900],
       'Roboto+Mono': [100, 300, 500],
+      'Ubuntu': [300, 500, 700],
     },  
     prefetch: false,
     preconnect: false,

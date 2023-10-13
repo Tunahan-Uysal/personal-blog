@@ -50,7 +50,8 @@ export default {
       },
       fontFamily: {
         'display': ['"Lexend Zetta"','"Lexend Mega"','"Roboto Mono"', 'ui-monospace'],
-        'title': ['"Lexend Mega"', '"Roboto Mono"', 'ui-monospace']
+        'title': ['"Lexend Mega"', '"Roboto Mono"', 'ui-monospace'],
+        'article': ['Ubuntu', 'sans-serif']
       },
     },
     plugins: [],
