@@ -8,12 +8,14 @@
       class="font-display font-black text-xl text-white ml-4 basis-1/12"
       >Tunahan Uysal</NuxtLink
     >
-    <div class="my-auto px-auto">
+    <div
+      class="my-auto mr-28 bg-white h-1/2 w-64 rounded-xl shadow-xl py-0.5 mx-5 indent-3"
+    >
       <input
         type="search"
         name=""
         id=""
-        class="form-input h-1/2 w-64 rounded-xl shadow-xl py-0.5 mx-5 indent-3 outline-none"
+        class="form-input my-0.5 w-9/12 border-r mr-3.5 outline-none"
         maxlength="33"
         placeholder="Search anything!"
       />
@@ -24,7 +26,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 inline mb-1"
+          class="w-6 h-6 inline mb-[0.313rem] hover:scale-110 hover:stroke-blue-950"
         >
           <path
             stroke-linecap="round"
@@ -37,7 +39,9 @@
 
     <UBurgerButton
       @click="sideBarToggle = !sideBarToggle"
-      :class="sideBarToggle ? '-rotate-90 mb-5 mr-0.5' : 'rotate-0 mt-2.5'"
+      :class="
+        sideBarToggle ? '-rotate-90 mb-5 mr-0.5 -ml-0.5' : 'rotate-0 mt-2.5'
+      "
       class="z-10 duration-300"
     />
     <div class="absolute flex flex-row-reverse w-full pointer-events-none">
