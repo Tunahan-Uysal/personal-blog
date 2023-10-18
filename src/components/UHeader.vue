@@ -26,7 +26,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 inline mb-[0.313rem] hover:scale-110 hover:stroke-blue-950"
+          class="w-6 h-6 inline mb-[0.313rem] scale-25 hover:scale-110 hover:stroke-blue-950"
         >
           <path
             stroke-linecap="round"
