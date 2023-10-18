@@ -54,6 +54,8 @@ export default {
         'article': ['Ubuntu', 'sans-serif']
       },
     },
-    plugins: [],
+    plugins: [
+      require('@tailwindcss/forms'),
+    ],
   }
 }
