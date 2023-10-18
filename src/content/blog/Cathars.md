@@ -3,6 +3,7 @@ name: "cathars"
 title: "Unknown Sects of the Past"
 date: 2023-09-27
 description: "The Cathar Religion, also known as Catharism or Albigensianism, is a dualistic religious belief system that originated in the Languedoc region of Southern France in the early 11th century. Despite its widespread influence, the Cathar Religion has several unknown sects that are not widely documented."
+tags: ["History", "Religion", "Worldbuilding"]
 author: "Tunahan Uysal"
 img: https://images.unsplash.com/photo-1458910892661-68f601156842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFRvdWxvdXNlJTIwQ2h1cmNofGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60
 layout: article
