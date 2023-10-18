@@ -46,8 +46,8 @@
     />
     <div class="absolute flex flex-row-reverse w-full pointer-events-none">
       <div
-        :class="sideBarToggle ? 'opacity-100' : '-mr-64 opacity-0'"
-        class="duration-300 bg-black/25 h-screen pointer-events-auto w-64"
+        :class="sideBarToggle ? 'opacity-100' : '-mr-64 bg-black/40'"
+        class="duration-300 bg-black/90 h-screen pointer-events-auto w-64"
       >
         <div
           class="text-xl text-center text-white w-full flex flex-col justify-around mt-16 h-[75vh]"
@@ -83,6 +83,10 @@
           </span>
         </div>
       </div>
+      <div
+        :class="sideBarToggle ? 'opacity-100' : 'opacity-0'"
+        class="duration-200 bg-black/75 h-screen pointer-events-none w-full"
+      ></div>
     </div>
   </nav>
 </template>
