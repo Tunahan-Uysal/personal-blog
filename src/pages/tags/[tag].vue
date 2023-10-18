@@ -3,15 +3,32 @@
     <UHeader />
     <div class="flex">
       <div
-        class="basis-8/12 w-10/12 rounded-md h-3/4 -py-8 bg-fixed bg-cover bg-center flex justify-center"
+        class="basis-8/12 w-10/12 rounded-md mt-12 bg-fixed bg-cover bg-center flex flex-col"
       >
         <main
-          class="mt-16 w-11/12 font-light font-article flex flex-col"
+          class="mt-8 w-11/12 font-light font-article"
           v-for="post in posts"
         >
-          <div class="bg-gray-500">
-            <h1>{{ post.title }}</h1>
-          </div>
+          <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
+            <div
+              class="w-10/12 rounded-lg flex flex-row shadow-md hover:shadow-xl duration-200 hover:scale-[1.01] ml-8"
+            >
+              <div class="basis-3/12 my-3">
+                <div
+                  class="w-28 h-28 my-auto bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
+                  :style="{ backgroundImage: 'url(' + post.img + ')' }"
+                ></div>
+              </div>
+              <div class="flex flex-col">
+                <h2 class="ml-4 mt-5 text-xl font-medium basis-1/2">
+                  {{ post.title }}
+                </h2>
+                <p class="ml-4 basis-1/2">
+                  {{ post.author }}
+                </p>
+              </div>
+            </div>
+          </NuxtLink>
         </main>
       </div>
       <UTredingBar />
