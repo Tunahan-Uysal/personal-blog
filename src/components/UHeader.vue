@@ -9,15 +9,27 @@
       >Tunahan Uysal</NuxtLink
     >
     <div
-      class="my-auto mr-28 bg-white h-1/2 w-64 rounded-xl shadow-xl py-0.5 mx-5 indent-3"
+      class="my-auto mr-28 bg-white h-1/2 rounded-xl shadow-xl py-0.5 mx-5 indent-3 duration-300"
+      :class="{
+        'w-96': searchBoxToggle,
+        'w-60': !searchBoxToggle,
+      }"
+      @click="console.log(isDocumentHidden)"
     >
       <input
         type="search"
         name=""
         id=""
-        class="form-input my-0.5 w-9/12 border-r mr-3.5 outline-none"
-        maxlength="33"
+        class="form-input my-0.5 w-9/12 border-r mr-2.5 outline-none duration-300"
+        maxlength="34"
         placeholder="Search anything!"
+        ref="USearchBox"
+        :class="{
+          'w-[84%] mr-3': searchBoxToggle,
+          '': !searchBoxToggle,
+        }"
+        @focusin="searchBoxToggle = true"
+        @focusout="searchBoxToggle = isDocumentHidden"
       />
       <NuxtLink to="">
         <svg
@@ -26,7 +38,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6 inline mb-[0.313rem] scale-25 hover:scale-110 hover:stroke-blue-950"
+          class="w-6 h-6 inline mb-[0.313rem] scale-90 hover:scale-100 hover:stroke-blue-950"
         >
           <path
             stroke-linecap="round"
@@ -93,12 +105,44 @@
 
 <script lang="ts">
 import UBurgerButton from "~/components/UBurgerButton.vue";
+import { ref, watch } from "vue";
+import Vue from "vue";
 
 export default {
   setup() {
     const sideBarToggle = ref(false);
+    const searchBoxToggle = ref(false);
+    const USearchBox = ref(null);
+    const isDocumentHidden = ref(false);
+
+    let isMounted = false;
+
+    onMounted(() => {
+      isMounted = true;
+    });
+
+    const handleVisChange = () => {
+      if (isMounted) {
+        isDocumentHidden.value = document.hidden;
+        searchBoxToggle.value = isDocumentHidden.value;
+        console.log(isDocumentHidden.value);
+      }
+    };
+
+    onBeforeMount(() => {
+      document.addEventListener("visibilitychange", handleVisChange);
+    });
+
+    onBeforeUnmount(() => {
+      document.removeEventListener("visibilitychange", handleVisChange);
+    });
+
     return {
       sideBarToggle,
+      searchBoxToggle,
+      USearchBox,
+      isDocumentHidden,
+      handleVisChange,
     };
   },
 };
