@@ -1,9 +1,9 @@
 <template>
   <div
-    class="my-auto mr-28 bg-white h-1/2 rounded-xl shadow-xl py-0.5 mx-5 indent-3 duration-300"
+    class="my-auto mr-28 bg-white h-1/2 rounded-xl py-0.5 mx-5 indent-3 duration-300"
     :class="{
-      'w-96': searchBoxToggle,
-      'w-60': !searchBoxToggle,
+      'w-96 scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
+      'w-60 drop-shadow-lg': !searchBoxToggle,
     }"
     @click="console.log(isDocumentHidden)"
   >
@@ -43,7 +43,6 @@
 
 <script lang="ts">
 import { ref, watch } from "vue";
-import Vue from "vue";
 
 export default {
   setup() {

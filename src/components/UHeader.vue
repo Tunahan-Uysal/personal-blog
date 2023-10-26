@@ -69,7 +69,6 @@
 import UBurgerButton from "~/components/UBurgerButton.vue";
 import USearchbox from "~/components/USearchbox.vue";
 import { ref, watch } from "vue";
-import Vue from "vue";
 
 export default {
   setup() {
