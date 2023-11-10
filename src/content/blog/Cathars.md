@@ -9,7 +9,7 @@ img: https://images.unsplash.com/photo-1458910892661-68f601156842?ixlib=rb-4.0.3
 layout: article
 ---
 
-## What is the Cathar Religion?
+## What was the Cathar Religion?
 
 The Cathar Religion is a dualistic religious belief system that originated in the Languedoc region of Southern France in the early 11th century. It was known for its emphasis on personal salvation through asceticism and good deeds, rather than through the intercession of the Catholic Church. Cathars believed in a war between Good and Evil, with the Good God creating the Universe and the Evil God creating the material world. The Cathar Religion was considered heretical by the Catholic Church and was suppressed in the Albigensian Crusade.
 

@@ -11,7 +11,7 @@
           :style="{ backgroundImage: 'url(' + post.img + ')' }"
         ></div>
       </NuxtLink>
-      <h2 class="ml-4 font-['Lexend_Mega'] text-xl font-medium p-4">
+      <h2 class="font-['Lexend_Mega'] text-xl font-medium text-center pb-4 max-h-16">
         {{ post.title }}
       </h2>
       <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black">

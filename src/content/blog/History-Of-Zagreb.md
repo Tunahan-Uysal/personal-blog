@@ -10,7 +10,7 @@ img: https://images.unsplash.com/photo-1628108452408-45fe8a87674e?ixlib=rb-4.0.3
 
 ## The Past
 
-The history of Zagreb is as fascinating as its architecture and culture. It was first mentioned in historical records in the 9th century, during the reign of King Tomislav. Over the centuries, it has been ruled by various empires, including the Habsburg monarchy, the Ottoman Empire, and the Austro-Hungarian Empire.
+The history of Zagreb is as fascinating as its architecture and culturse. It was first mentioned in historical records in the 9th century, during the reign of King Tomislav. Over the centuries, it has been ruled by various empires, including the Habsburg monarchy, the Ottoman Empire, and the Austro-Hungarian Empire.
 <br><br/>
 In the 19th century, Zagreb experienced significant industrialization and urban development. The city became a hub for trade, commerce, and education. The period was marked by the construction of many significant buildings and public spaces, including the Zagreb Cathedral, the National and University Library of Croatia, and the University of Zagreb.
 
