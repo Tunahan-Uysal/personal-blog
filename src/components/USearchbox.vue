@@ -5,7 +5,6 @@
       'w-96 scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
       'w-60 drop-shadow-lg': !searchBoxToggle,
     }"
-    @click="console.log(isDocumentHidden)"
   >
     <input
       type="search"

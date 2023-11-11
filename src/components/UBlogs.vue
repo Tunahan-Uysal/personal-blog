@@ -1,13 +1,13 @@
 <template>
   <div
-    class="h-screen flex flex-row justify-center"
+    class="h-full flex flex-row justify-center"
     v-for="post in posts"
     :key="post.slug"
   >
     <div class="w-10/12 rounded-lg flex flex-col">
       <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
         <div
-          class="w-10/12 h-64 bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
+          class="w-10/12 h-[33vh] bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
           :style="{ backgroundImage: 'url(' + post.img + ')' }"
         ></div>
       </NuxtLink>
@@ -16,7 +16,7 @@
       </h2>
       <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black">
         {{ post.shortDescription }}
-      </p>
+      </p>  
       <div class="basis-1/4 flex flex-row-reverse mb-8">
         <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
           <UButton />

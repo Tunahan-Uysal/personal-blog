@@ -5,8 +5,8 @@
       <div
         class="basis-8/12 w-10/12 rounded-md h-3/4 -py-8 bg-fixed bg-cover bg-center flex justify-center"
       >
-        <main class="mt-16 w-11/12 font-light font-article">
-          <h1 class="font-['Lexend_Mega'] text-center text-2xl font-bold">
+        <main class="mt-16 w-11/12 2xl:w-9/12 font-light font-article">
+          <h1 class="font-['Lexend_Mega'] text-center text-2xl 2xl:text-3xl font-bold">
             {{ articles.title }}
           </h1>
 
@@ -14,7 +14,7 @@
             {{ articles.description }}
           </h3>
           <div
-            class="bg-cover bg-bottom mx-auto w-10/12 h-72"
+            class="bg-cover bg-bottom mx-auto w-10/12 h-[50vh] 2xl:h-[40vh]"
             :style="{ backgroundImage: 'url(' + articles.img + ')' }"
           ></div>
           <ContentDoc

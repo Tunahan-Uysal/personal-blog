@@ -5,7 +5,7 @@ date: 2023-11-10
 description: "Medieval religion has played a significant role in shaping the world of fantasy literature. From the dualistic belief systems of the Cathars to the apocalyptic themes of the end times, the religious beliefs and practices of the Middle Ages have left a lasting impact on the genre."
 tags: ["History", "Religion", "Fantasy Literature"]
 author: "Tunahan Uysal"
-img: https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fwww.factinate.com%2Fwp-content%2Fuploads%2F2018%2F03%2Fshutterstock_1257533443-scaled.jpg&sp=1699615157T35aa25fdcdae7763d06f55920b9c2e70829675eca675bdbab142970ca2d9dfd2
+img: https://www.factinate.com/storage/app/media/factinate/2018/03/shutterstock_1257533443-1536x1024.jpg
 layout: article
 ---
 
