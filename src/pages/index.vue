@@ -13,6 +13,8 @@
 <script lang="ts" setup>
 import UHeader from "~/components/UHeader.vue";
 import UBlogs from "~/components/UBlogs.vue";
+
+
 </script>
 
 <style></style>

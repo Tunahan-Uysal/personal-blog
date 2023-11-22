@@ -6,6 +6,13 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: [
+    'nuxt-meilisearch',
+  ],
+  meilisearch: {
+    hostUrl: 'localhost:7700',
+    searchApiKey: 'fT-yMY-izauZATUflpc5gZQQE902ZgyzWyWz5vRW39k'
+  },
   devtools: { enabled: true },
   typescript: { shim: false },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxtjs/google-fonts'],

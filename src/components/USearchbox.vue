@@ -36,19 +36,55 @@
           d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
         />
       </svg>
+      <div 
+      class="relative mx-auto bg-white/50 rounded-sm m-1"
+      >
+        <div class="block duration-300"
+          :class="{
+          '': searchBoxToggle,
+          'h-0 opacity-0': !searchBoxToggle,
+        }"
+        >
+        <ol class="list-none list-outside">
+          <li>
+            <div class="flex flex-row">
+              <div class="rounded-md bg-gradient-to-br from-sky-500 to-emerald-300 w-12 h-12 m-1"></div>
+              <div class="flex flex-row w-full">
+                <section class="w-10/12">
+                  <h3 class="text-lg font-semibold">Title Here</h3>
+                  <p class="text-xs mt-1">Description Here</p>
+                </section>
+                <section class="w-2/12 text-xl text-center float-right my-auto">
+                  1
+                </section>
+              </div>
+              
+            </div>
+          </li>
+        </ol>
+        </div>
+      </div>
     </NuxtLink>
   </div>
 </template>
 
 <script lang="ts">
 import { ref, watch } from "vue";
+import { MeiliSearch } from 'meilisearch'
 
+const client = new MeiliSearch({
+      host: 'http://localhost:7700',
+      apiKey: 'fT-yMY-izauZATUflpc5gZQQE902ZgyzWyWz5vRW39k'
+    })
+const index = client.index('blogs');
+let reponse = await index.search('fantasy literature');
+console.log("look at me dude!", reponse);
 export default {
   setup() {
     const searchBoxToggle = ref(false);
     const USearchBox = ref(null);
     const isDocumentHidden = ref(false);
-
+    
     let isMounted = false;
 
     onMounted(() => {
