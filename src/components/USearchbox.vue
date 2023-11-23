@@ -2,8 +2,14 @@
   <div
     class="my-auto mr-28 bg-white h-1/2 rounded-xl py-0.5 mx-5 indent-3 duration-300"
     :class="{
-      'w-96 scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
+      'w-[30rem] scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
       'w-60 drop-shadow-lg': !searchBoxToggle,
+    }"
+    @focusin="searchBoxToggle = true"
+    @focusout="{ 
+      setTimeout(() => {
+      searchBoxToggle = isDocumentHidden;
+    }, 200);
     }"
   >
     <input
@@ -15,11 +21,12 @@
       placeholder="Search anything!"
       ref="USearchBox"
       :class="{
-        'w-[84%] mr-3 drop-shadow-sm': searchBoxToggle,
+        'w-[84%] mr-5 drop-shadow-sm': searchBoxToggle,
         '': !searchBoxToggle,
       }"
-      @focusin="searchBoxToggle = true"
-      @focusout="searchBoxToggle = isDocumentHidden"
+      v-model="searchQuery"
+      @keyup.enter="searchOnMeilisearchDB(searchQuery)"
+      @input="searchOnMeilisearchDB(searchQuery)"
     />
     <NuxtLink to="">
       <svg
@@ -37,30 +44,31 @@
         />
       </svg>
       <div 
-      class="relative mx-auto bg-white/50 rounded-sm m-1"
+      class="relative mx-auto bg-white/90 rounded-md m-1"
       >
-        <div class="block duration-300"
+        <div class="block transition-opacity duration-300"
           :class="{
           '': searchBoxToggle,
-          'h-0 opacity-0': !searchBoxToggle,
+          'h-0 opacity-0 invisible': !searchBoxToggle || searchQuery === '',
         }"
         >
         <ol class="list-none list-outside">
-          <li>
-            <div class="flex flex-row">
-              <div class="rounded-md bg-gradient-to-br from-sky-500 to-emerald-300 w-12 h-12 m-1"></div>
-              <div class="flex flex-row w-full">
-                <section class="w-10/12">
-                  <h3 class="text-lg font-semibold">Title Here</h3>
-                  <p class="text-xs mt-1">Description Here</p>
-                </section>
-                <section class="w-2/12 text-xl text-center float-right my-auto">
-                  1
-                </section>
+          <NuxtLink v-for="(query, index) in searchResponse" :to="'/' + query.date.substring(0, 10) + '/' + query.name">
+            <li>
+              <div class="flex flex-row">
+                <div class="rounded-md bg-gradient-to-br from-sky-500 to-emerald-300 w-12 h-12 m-1"></div>
+                <div class="flex flex-row w-full">
+                  <section class="w-10/12">
+                    <h3 class="text-md font-semibold mt-1.5"> {{ query.title }} </h3>
+                    <p class="text-xs mt-1 line-clamp-1"> {{ query.description }}</p>
+                  </section>
+                  <section class="w-2/12 text-xl text-center float-right my-auto">
+                    {{ index + 1 }}
+                  </section>
+                </div>
               </div>
-              
-            </div>
-          </li>
+            </li>
+          </NuxtLink>
         </ol>
         </div>
       </div>
@@ -77,25 +85,34 @@ const client = new MeiliSearch({
       apiKey: 'fT-yMY-izauZATUflpc5gZQQE902ZgyzWyWz5vRW39k'
     })
 const index = client.index('blogs');
-let reponse = await index.search('fantasy literature');
-console.log("look at me dude!", reponse);
+let queryResponse = ref([]);
+let searchResponse = ref([]);
 export default {
   setup() {
     const searchBoxToggle = ref(false);
     const USearchBox = ref(null);
     const isDocumentHidden = ref(false);
-    
+    const searchQuery = ref("");
     let isMounted = false;
 
     onMounted(() => {
       isMounted = true;
     });
 
+    async function searchOnMeilisearchDB(searchQuery: string) {
+      if (searchQuery != '') {
+        queryResponse = await index.search(searchQuery);
+        searchResponse.value = queryResponse.hits;
+        console.log("look at me dude!", searchResponse);
+      }
+    }
+
     const handleVisChange = () => {
       if (isMounted) {
         isDocumentHidden.value = document.hidden;
         searchBoxToggle.value = isDocumentHidden.value;
         console.log(isDocumentHidden.value);
+        console.log(searchQuery);
       }
     };
 
@@ -112,6 +129,10 @@ export default {
       USearchBox,
       isDocumentHidden,
       handleVisChange,
+      searchQuery,
+      searchOnMeilisearchDB,
+      queryResponse,
+      searchResponse,
     };
   },
 };
