@@ -14,8 +14,8 @@
       <h2 class="font-['Lexend_Mega'] text-xl font-medium text-center pb-4 max-h-16">
         {{ post.title }}
       </h2>
-      <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black">
-        {{ post.shortDescription }}
+      <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black line-clamp-6">
+        {{ post.description }}
       </p>  
       <div class="basis-1/4 flex flex-row-reverse mb-8">
         <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">

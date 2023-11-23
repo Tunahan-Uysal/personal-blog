@@ -56,7 +56,9 @@
           <NuxtLink v-for="(query, index) in searchResponse" :to="'/' + query.date.substring(0, 10) + '/' + query.name">
             <li>
               <div class="flex flex-row">
-                <div class="rounded-md bg-gradient-to-br from-sky-500 to-emerald-300 w-12 h-12 m-1"></div>
+                <div class="rounded-md bg-cover bg-bottom bg-gradient-to-br from-sky-500 to-emerald-300 w-12 h-12 m-1"
+                :style="{ backgroundImage: 'url(' + query.img + ')' }"
+                ></div>
                 <div class="flex flex-row w-full">
                   <section class="w-10/12">
                     <h3 class="text-md font-semibold mt-1.5"> {{ query.title }} </h3>
