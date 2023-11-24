@@ -1,9 +1,9 @@
 <template>
   <div class="basis-4/12 border-l my-16">
-    <div class="border-l-slae-300 h-screen">
-      <span class="font-title ml-4 underline decoration-double text-2xl">
+    <div class="border-l-slate-300 h-screen">
+      <section class="font-title ml-4 underline decoration-double text-2xl text-center lg:text-left">
         Latest Articles
-      </span>
+      </section>
       <div
         class="rounded-lg bg-slate-50 w-9/12 mx-auto mt-6"
         v-for="post in posts.slice(0, 3)"
@@ -30,8 +30,10 @@
               <section class="text-sm basis-1/2">
                 {{ post.title }}
               </section>
-              <section class="basis-1/2 text-xs mt-2">
-                {{ post.author }}
+              <section class="basis-1/2 text-xs mt-2 text-slate-800 breadcrumb">
+                <span>{{ post.author }}</span>
+                <span> test </span>
+                <span> two</span>
               </section>
             </div>
           </div>
@@ -63,4 +65,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+.breadcrumb span + span::before {
+  display: inline-block;
+  margin: 0.1em .25em;
+  border: .2em solid gray;
+    border-radius: 50%;
+  height: .025em;
+  content: '';
+}
+
+</style>

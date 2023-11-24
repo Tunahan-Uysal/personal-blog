@@ -6,11 +6,7 @@
       'w-60 drop-shadow-lg': !searchBoxToggle,
     }"
     @focusin="searchBoxToggle = true"
-    @focusout="{ 
-      setTimeout(() => {
-      searchBoxToggle = isDocumentHidden;
-    }, 200);
-    }"
+    @focusout="delayFocusToggle"
   >
     <input
       type="search"
@@ -87,8 +83,9 @@ const client = new MeiliSearch({
       apiKey: 'fT-yMY-izauZATUflpc5gZQQE902ZgyzWyWz5vRW39k'
     })
 const index = client.index('blogs');
-let queryResponse = ref([]);
-let searchResponse = ref([]);
+let queryResponse = ref();
+let searchResponse = ref();
+
 export default {
   setup() {
     const searchBoxToggle = ref(false);
@@ -103,10 +100,16 @@ export default {
 
     async function searchOnMeilisearchDB(searchQuery: string) {
       if (searchQuery != '') {
-        queryResponse = await index.search(searchQuery);
-        searchResponse.value = queryResponse.hits;
+        queryResponse.value = await index.search(searchQuery);
+        searchResponse.value = queryResponse.value.hits;
         console.log("look at me dude!", searchResponse);
       }
+    }
+
+    const delayFocusToggle = () => {
+      setTimeout(() => {
+        searchBoxToggle.value = document.hidden;
+      }, 200);
     }
 
     const handleVisChange = () => {
@@ -135,6 +138,7 @@ export default {
       searchOnMeilisearchDB,
       queryResponse,
       searchResponse,
+      delayFocusToggle,
     };
   },
 };
