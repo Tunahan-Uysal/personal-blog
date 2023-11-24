@@ -1,28 +1,24 @@
 <template>
+  
   <div
     class="h-full flex flex-row justify-center"
     v-for="post in posts"
     :key="post.slug"
   >
+  <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
     <div class="w-10/12 rounded-lg flex flex-col">
-      <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
         <div
           class="w-10/12 h-[33vh] lg:h-[15vw] bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
           :style="{ backgroundImage: 'url(' + post.img + ')' }"
         ></div>
-      </NuxtLink>
-      <h2 class="font-['Lexend_Mega'] text-xl font-medium text-center pb-4 max-h-16">
+      <h2 class="text-xl font-semibold text-center flex-grow min-h-[3.25rem]">
         {{ post.title }}
       </h2>
-      <p class="mx-6 text-transparent bg-clip-text bg-gradient-to-b from-black line-clamp-6 text-slate-800">
+      <p class="mx-6 line-clamp-5 text-slate-800 mb-4">
         {{ post.description }}
       </p>  
-      <div class="basis-1/4 flex flex-row-reverse mb-8">
-        <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name" class="mt-12 mr-8">
-          <UButton />
-        </NuxtLink>
-      </div>
     </div>
+  </NuxtLink>
   </div>
 </template>
 

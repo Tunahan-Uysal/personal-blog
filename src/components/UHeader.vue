@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="h-16 flex flex-row justify-between bg-indigo-400 sticky top-0"
+    class="h-16 flex flex-row justify-between bg-indigo-400 sticky top-0 z-50"
     style=""
   >
     <NuxtLink
