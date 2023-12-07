@@ -2,7 +2,7 @@
   <div class="basis-4/12 border-l my-16">
     <div class="border-l-slate-300 h-screen">
       <section class="font-semibold ml-4 underline decoration-double text-2xl text-center lg:text-left">
-        Latest Articles
+        {{ $t('newBlogpost') }}
       </section>
       <div
         class="rounded-lg bg-slate-50 w-9/12 mx-auto mt-6"
@@ -56,9 +56,11 @@
 <script lang="ts">
 export default {
   async setup() {
+    const { locale } = useI18n()
     const posts = await queryContent("blog").sort({ date: -1 }).find();
     return {
       posts,
+      locale,
     };
   },
 };

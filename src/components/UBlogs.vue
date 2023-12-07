@@ -2,6 +2,7 @@
   
   <div
     class="h-full flex flex-row justify-center"
+    
     v-for="post in posts"
     :key="post.slug"
   >
@@ -23,9 +24,6 @@
 </template>
 
 <script lang="ts">
-import UButton from "~/components/UButton.vue";
-import { onMounted } from "vue";
-import { useRoute } from "vue-router";
 
 export default {
   /*
@@ -41,10 +39,11 @@ export default {
 
   //todo: figure out what you did right
   async setup() {
-    const posts = await queryContent("blog").sort({ date: -1 }).find();
-
+    const { locale } = useI18n()
+    const posts = await queryContent("blog/"+locale.value).sort({ date: -1 }).find();
+    console.log(locale)
     const shortDescription = ref("");
-
+    //@ts-ignore
     posts.forEach((post) => {
       post.shortDescription = post.description.substring(0, 247) + "...";
       console.log(post.description, post.shortDescription);

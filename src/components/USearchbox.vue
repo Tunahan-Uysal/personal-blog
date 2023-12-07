@@ -14,7 +14,7 @@
       id=""
       class="form-input my-0.5 w-9/12 border-r mr-2.5 outline-none duration-300"
       maxlength="45"
-      placeholder="Search anything!"
+      :placeholder="$t('searchBoxSuggestion')"
       ref="USearchBox"
       :class="{
         'w-[84%] mr-5 drop-shadow-sm': searchBoxToggle,

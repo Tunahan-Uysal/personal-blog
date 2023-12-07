@@ -6,19 +6,18 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: [
-    'nuxt-meilisearch',
-  ],
   meilisearch: {
     hostUrl: 'localhost:7700',
     searchApiKey: 'fT-yMY-izauZATUflpc5gZQQE902ZgyzWyWz5vRW39k'
   },
+  i18n: {
+    vueI18n: './i18n.config.ts'
+  },
   devtools: { enabled: true },
   typescript: { shim: false },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/content', '@nuxtjs/google-fonts'],
+  modules: ['nuxt-meilisearch','@nuxtjs/tailwindcss','@nuxt/content','@nuxtjs/google-fonts','@nuxtjs/i18n'],
   googleFonts: {
     display: 'swap',
-
     families: {
       'Lexend+Zetta': [100, 400, 500, 900],
       'Lexend+Mega': [100, 400, 500, 900],
