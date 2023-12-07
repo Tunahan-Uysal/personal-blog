@@ -4,7 +4,7 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="black"
-      class="w-10 my-auto mr-4 h-10 cursor-pointer"
+      class="w-8 my-auto h-8  cursor-pointer"
     >
       <path
         fill-rule="evenodd"

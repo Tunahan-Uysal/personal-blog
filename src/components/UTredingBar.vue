@@ -1,5 +1,5 @@
 <template>
-  <div class="basis-4/12 border-l my-16">
+  <div class="basis-4/12 border-l ">
     <div class="border-l-slate-300 h-screen">
       <section class="font-semibold ml-4 underline decoration-double text-2xl text-center lg:text-left">
         {{ $t('newBlogpost') }}

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="my-auto mr-28 bg-white h-1/2 rounded-xl py-0.5 mx-5 indent-3 duration-300"
+    class="-pl-28 bg-white h-[44%] rounded-xl my-4 indent-3 duration-300"
     :class="{
       'w-[30rem] scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
       'w-60 drop-shadow-lg': !searchBoxToggle,

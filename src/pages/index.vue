@@ -2,7 +2,7 @@
   <div class="bg-gradient-to-b from-slate-200 to-[50vh]">
     <UHeader />
     <main class="flex flex-col lg:flex-row">
-      <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 mt-8 basis-8/12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 basis-8/12">
         <UBlogs />
       </div>
       <UTredingBar />
