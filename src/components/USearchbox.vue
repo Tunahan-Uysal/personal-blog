@@ -1,9 +1,9 @@
 <template>
   <div
-    class="-pl-28 bg-white h-[44%] rounded-xl my-4 indent-3 duration-300"
+    class="sm:-pl-28 bg-white h-[44%] rounded-xl my-4 indent-3 duration-300 invisible sm:visible"
     :class="{
-      'w-[30rem] scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
-      'w-60 drop-shadow-lg': !searchBoxToggle,
+      'sm:w-[30rem] scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
+      'sm:w-60 drop-shadow-lg': !searchBoxToggle,
     }"
     @focusin="searchBoxToggle = true"
     @focusout="delayFocusToggle"
@@ -12,7 +12,7 @@
       type="search"
       name=""
       id=""
-      class="form-input my-0.5 w-9/12 border-r mr-2.5 outline-none duration-300"
+      class="form-input my-0.5 sm:w-9/12 border-r mr-2.5 outline-none duration-300"
       maxlength="45"
       :placeholder="$t('searchBoxSuggestion')"
       ref="USearchBox"
@@ -31,7 +31,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor" 
-        class="w-6 h-6 inline mb-[0.313rem] scale-90 hover:scale-100 hover:stroke-blue-950"
+        class="w-6 h-6 inline mb-[0.313rem] scale-90 hover:scale-100 hover:stroke-blue-950 visible max-sm:w-9 max-sm:h-9 max-sm:-mt-1 max-sm:-mr-6"
       >
         <path
           stroke-linecap="round"

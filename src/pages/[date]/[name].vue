@@ -19,7 +19,7 @@
           ></div>
           <ContentDoc
             class="px-16 text-lg mt-3"
-            :path="'blog/' + articles.name"
+            :path="'blog/en/' + articles.name"
           />
         </main>
       </div>

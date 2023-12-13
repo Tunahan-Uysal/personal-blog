@@ -13,23 +13,67 @@
         <section class="flex flex-row justify-center">
           <USearchbox />
         </section>
-        <section class="flex flex-row">
-          <UDropdownMenu class="mx-auto -mt-5 bg-white rounded-full p-1 border-2 border-indigo-400"/>
+        <section class="flex flex-col">
+          <UDropdownMenu class="mx-auto -mt-4 z-50 border-indigo-400 invisible sm:visible"
+            @click="sideBarToggle = !sideBarToggle"
+          />  
+          <div class="invisible sm:visible h-0 w-0 border-x-8 border-x-transparent border-b-[16px] border-b-white/90 mx-auto z-50 mt-2"
+            :class="
+            sideBarToggle ? '' : 'opacity-0 duration-300'
+            "
+          ></div>
+          <div class="invisible sm:visible relative mx-auto bg-white/90 rounded-md p-1 z-50"
+            :class="
+            sideBarToggle ? '' : 'opacity-0 duration-300'
+            "
+          >
+            <div class="block transition-opacity duration-300">
+              <ol class="list-none list-outside">
+                <li>
+                  <div class="flex flex-col text-center mx-2 text-gray-950">
+                    <NuxtLink
+                      to="/about-me"
+                      class="font-sans hover:text-black hover:underline duration-75 cursor-pointer mb-4 mt-4"
+                    >
+                      About Me
+                    </NuxtLink>
+                    <NuxtLink
+                      to=""
+                      class="font-sans hover:text-black hover:underline duration-75 cursor-pointer mb-4"
+                    >
+                      Contact
+                    </NuxtLink>
+                    <NuxtLink
+                      to=""
+                      class="font-sans hover:text-black hover:underline duration-75 cursor-pointer mb-4"
+                    >
+                      Programming
+                    </NuxtLink>
+                    <NuxtLink
+                      to=""
+                      class="font-sans hover:text-black hover:underline duration-75 cursor-pointer mb-4"
+                    >
+                      Worldbuilding
+                    </NuxtLink>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
         </section>
       </div>
-      
 
       <UBurgerButton
         @click="sideBarToggle = !sideBarToggle"
         :class="
-          sideBarToggle ? '-rotate-90 mb-5 ml-[94.99vw]' : 'rotate-0 mt-2.5'
+          sideBarToggle ? '-rotate-90 mt-1 ml-[87vw]' : 'rotate-0 mt-2.5 ml-[88vw]'
         "
-        class="z-10 duration-300 absolute ml-[96vw]"
+        class="z-10 duration-300 absolute  sm:invisible"
       />
-      <div class="absolute flex flex-row-reverse w-full pointer-events-none">
+      <div class="flex flex-row-reverse w-full fixed pointer-events-none">
         <div
           :class="sideBarToggle ? 'opacity-100' : '-mr-64 bg-black/40'"
-          class="duration-300 bg-black/90 h-screen pointer-events-auto w-64"
+          class="bg-black/90 h-screen pointer-events-auto w-64 sm:opacity-0 sm:w-0"
         >
           <div
             class="text-xl text-center text-white w-full flex flex-col justify-around mt-16 h-[75vh]"
@@ -67,7 +111,7 @@
         </div>
         <div
           :class="sideBarToggle ? 'opacity-100' : 'opacity-0'"
-          class="duration-200 bg-black/75 h-screen pointer-events-none w-full"
+          class="duration-0 bg-black/75 h-[100vh] relative pointer-events-none w-full"
         ></div>
       </div>
     </nav>

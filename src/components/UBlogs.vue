@@ -7,7 +7,7 @@
     :key="post.slug"
   >
   <NuxtLink :to="'/' + post.date.substring(0, 10) + '/' + post.name">
-    <div class="w-10/12 rounded-lg flex flex-col">
+    <div class="mx-auto w-10/12 rounded-lg flex flex-col">
         <div
           class="w-10/12 h-[33vh] lg:h-[15vw] bg-slate-400 mx-auto rounded-lg bg-cover bg-bottom"
           :style="{ backgroundImage: 'url(' + post.img + ')' }"
