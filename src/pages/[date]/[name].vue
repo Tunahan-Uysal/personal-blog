@@ -19,7 +19,7 @@
           ></div>
           <ContentDoc
             class="px-16 text-lg mt-3"
-            :path="'blog/' + articles.name"
+            :path="'blog/' + locale + '/' + articles.name"
           />
         </main>
       </div>
@@ -38,18 +38,21 @@ export default {
   },
   async setup() {
     const route = useRoute();
+    const { locale } = useI18n()
 
-    const articles = await queryContent("blog")
+    const articles = await queryContent("blog/"+locale.value)
       .where({ name: route.params.name })
       .findOne();
 
     const currentName = ref("");
 
+    console.log(locale.value);
     console.log("checkthisout:", articles.img, articles.title);
 
     return {
       route,
       articles,
+      locale,
     };
   },
 };
