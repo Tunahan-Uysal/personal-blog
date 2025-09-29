@@ -1,13 +1,14 @@
-FROM node:18-alpine AS builder
+FROM node:18-slim AS builder
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install -g npm@latest
+RUN npm ci --no-cache --force
 COPY . .
 RUN npm run build
 
 # Production stage
-FROM node:18-alpine
+FROM node:18-slim
 
 WORKDIR /app
 COPY --from=builder /app/.output ./
