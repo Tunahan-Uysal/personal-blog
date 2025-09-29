@@ -2,7 +2,8 @@
   <div
     class="my-auto mr-28 bg-white h-1/2 rounded-xl py-0.5 mx-5 indent-3 duration-300"
     :class="{
-      'w-[30rem] scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]': searchBoxToggle,
+      'w-[30rem] scale-110 drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]':
+        searchBoxToggle,
       'w-60 drop-shadow-lg': !searchBoxToggle,
     }"
     @focusin="searchBoxToggle = true"
@@ -30,7 +31,7 @@
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
-        stroke="currentColor" 
+        stroke="currentColor"
         class="w-6 h-6 inline mb-[0.313rem] scale-90 hover:scale-100 hover:stroke-blue-950"
       >
         <path
@@ -39,35 +40,44 @@
           d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
         />
       </svg>
-      <div 
-      class="relative mx-auto bg-white/90 rounded-md m-1"
-      >
-        <div class="block transition-opacity duration-300"
+      <div class="relative mx-auto bg-white/90 rounded-md m-1">
+        <div
+          class="block transition-opacity duration-300"
           :class="{
-          '': searchBoxToggle,
-          'h-0 opacity-0 invisible': !searchBoxToggle || searchQuery === '',
-        }"
+            '': searchBoxToggle,
+            'h-0 opacity-0 invisible': !searchBoxToggle || searchQuery === '',
+          }"
         >
-        <ol class="list-none list-outside">
-          <NuxtLink v-for="(query, index) in searchResponse" :to="'/' + query.date.substring(0, 10) + '/' + query.name">
-            <li>
-              <div class="flex flex-row">
-                <div class="rounded-md bg-cover bg-bottom bg-gradient-to-br from-sky-500 to-emerald-300 w-12 h-12 m-1"
-                :style="{ backgroundImage: 'url(' + query.img + ')' }"
-                ></div>
-                <div class="flex flex-row w-full">
-                  <section class="w-10/12">
-                    <h3 class="text-md font-semibold mt-1.5"> {{ query.title }} </h3>
-                    <p class="text-xs mt-1 line-clamp-1"> {{ query.description }}</p>
-                  </section>
-                  <section class="w-2/12 text-xl text-center float-right my-auto">
-                    {{ index + 1 }}
-                  </section>
+          <ol class="list-none list-outside">
+            <NuxtLink
+              v-for="(query, index) in searchResponse"
+              :to="'/' + query.date.substring(0, 10) + '/' + query.name"
+            >
+              <li>
+                <div class="flex flex-row">
+                  <div
+                    class="rounded-md bg-cover bg-bottom bg-gradient-to-br from-sky-500 to-emerald-300 w-12 h-12 m-1"
+                    :style="{ backgroundImage: 'url(' + query.img + ')' }"
+                  ></div>
+                  <div class="flex flex-row w-full">
+                    <section class="w-10/12">
+                      <h3 class="text-md font-semibold mt-1.5">
+                        {{ query.title }}
+                      </h3>
+                      <p class="text-xs mt-1 line-clamp-1">
+                        {{ query.description }}
+                      </p>
+                    </section>
+                    <section
+                      class="w-2/12 text-xl text-center float-right my-auto"
+                    >
+                      {{ index + 1 }}
+                    </section>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </NuxtLink>
-        </ol>
+              </li>
+            </NuxtLink>
+          </ol>
         </div>
       </div>
     </NuxtLink>
@@ -76,13 +86,13 @@
 
 <script lang="ts">
 import { ref, watch } from "vue";
-import { MeiliSearch } from 'meilisearch'
+import { MeiliSearch } from "meilisearch";
 
 const client = new MeiliSearch({
-      host: 'http://localhost:7700',
-      apiKey: 'fT-yMY-izauZATUflpc5gZQQE902ZgyzWyWz5vRW39k'
-    })
-const index = client.index('blogs');
+  host: "https://meilisearch-kgsk4kgk08cgosgsookw004w.coolify.tunahan-at.work/",
+  apiKey: "013mnyvne6fyPdeHkBjwP9SJNrcgmHJq",
+});
+const index = client.index("blogs");
 let queryResponse = ref();
 let searchResponse = ref();
 
@@ -99,7 +109,7 @@ export default {
     });
 
     async function searchOnMeilisearchDB(searchQuery: string) {
-      if (searchQuery != '') {
+      if (searchQuery != "") {
         queryResponse.value = await index.search(searchQuery);
         searchResponse.value = queryResponse.value.hits;
         console.log("look at me dude!", searchResponse);
@@ -110,7 +120,7 @@ export default {
       setTimeout(() => {
         searchBoxToggle.value = document.hidden;
       }, 200);
-    }
+    };
 
     const handleVisChange = () => {
       if (isMounted) {

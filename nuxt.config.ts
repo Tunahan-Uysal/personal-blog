@@ -6,10 +6,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  meilisearch: {
-    hostUrl: process.env.MEILISEARCH_HOST,
-    searchApiKey: process.env.MEILISEARCH_API_KEY,
-  },
   i18n: {
     vueI18n: "./i18n.config.ts",
   },
@@ -22,6 +18,10 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/i18n",
   ],
+  meilisearch: {
+    hostUrl: process.env.MEILISEARCH_HOST,
+    searchApiKey: process.env.MEILISEARCH_API_KEY,
+  },
   googleFonts: {
     display: "swap",
     families: {
