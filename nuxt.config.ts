@@ -7,30 +7,36 @@ export default defineNuxtConfig({
     },
   },
   meilisearch: {
-    hostUrl: 'localhost:7700',
-    searchApiKey: 'fT-yMY-izauZATUflpc5gZQQE902ZgyzWyWz5vRW39k'
+    hostUrl: process.env.MEILISEARCH_HOST,
+    searchApiKey: process.env.MEILISEARCH_API_KEY,
   },
   i18n: {
-    vueI18n: './i18n.config.ts'
+    vueI18n: "./i18n.config.ts",
   },
   devtools: { enabled: true },
   typescript: { shim: false },
-  modules: ['nuxt-meilisearch','@nuxtjs/tailwindcss','@nuxt/content','@nuxtjs/google-fonts','@nuxtjs/i18n'],
+  modules: [
+    "nuxt-meilisearch",
+    "@nuxtjs/tailwindcss",
+    "@nuxt/content",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/i18n",
+  ],
   googleFonts: {
-    display: 'swap',
+    display: "swap",
     families: {
-      'Lexend+Zetta': [100, 400, 500, 900],
-      'Lexend+Mega': [100, 400, 500, 900],
-      'Roboto+Mono': [100, 300, 500],
-      'Ubuntu': [300, 500, 700],
-    },  
+      "Lexend+Zetta": [100, 400, 500, 900],
+      "Lexend+Mega": [100, 400, 500, 900],
+      "Roboto+Mono": [100, 300, 500],
+      Ubuntu: [300, 500, 700],
+    },
     prefetch: false,
     preconnect: false,
     preload: false,
     download: true,
-    outputDir: 'assets',
+    outputDir: "assets",
     base64: false,
   },
-  srcDir: 'src',
-  buildDir: '.nuxt'
-})
+  srcDir: "src",
+  buildDir: ".nuxt",
+});
